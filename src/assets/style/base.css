@@ -1,0 +1,164 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background-color: #e8e9ee;
+  color: #333;
+  font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: inherit;
+}
+
+.iconfont {
+  font-family: "iconfont", sans-serif !important;
+  font-size: inherit;
+
+  /* 视觉对齐  */
+  position: relative;
+  top: 2px;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.userWrap {
+  padding-top: 30px;
+  overflow: hidden;
+}
+.userwrap {
+  overflow: hidden;
+}
+tr.ivu-table-row-hover td {
+  color: var(--theme);
+  background-color: #faedee;
+}
+.userAction {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.ivu-input-group {
+  float: left;
+  width: 285px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.ivu-input-group .ivu-input{
+  height: 40px;
+  width: calc(100% + 20px);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  position: relative;
+  left: -20px;
+  padding-left: 25px;
+}
+.ivu-input-group-append,
+.ivu-input-group-prepend {
+  overflow: hidden;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  background: var(--theme);
+  width: 40px;
+  position: relative;
+  z-index: 3;
+}
+.ivu-btn.ivu-btn-icon-only {
+  font-size: 15px;
+  padding: 0;
+  color: #fff !important;
+}
+.ivu-btn-large {
+  margin-left: 10px;
+  height: 40px;
+}
+.ivu-page {
+  margin-bottom: 30px;
+}
+/*注销弹框样式*/
+/*  .ivu-modal {
+    top: calc(50vh - 128px);
+  }*/
+.ivu-modal-footer {
+  border: none;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.ivu-modal-header {
+  border: none;
+  background: #f5f5f5;
+}
+.ivu-modal-header-inner {
+  font-size: 14px;
+  font-weight: 500;
+}
+.ivu-modal-content {
+  overflow: hidden;
+}
+.ivu-modal-body h4 {
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+  font-weight: normal;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+.ivu-modal-footer button {
+  width: 130px;
+}
+.ivu-modal-footer .ivu-btn-text {
+  background: #c4c4c4;
+  color: #fff;
+}
+.ivu-modal-footer .ivu-btn-primary {
+  background: var(--theme);
+  border-color: var(--theme);
+}
+ /*翻页*/
+.ivu-page {
+  float: right;
+  margin-top: 30px;
+}
+.ivu-page-item-active {
+  background-color: var(--theme);
+  border-color: var(--theme);
+}
+.ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+.ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+  color: #333;
+  font-weight: 600;
+}

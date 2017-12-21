@@ -1,0 +1,162 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<title>jeDate日期控件</title>
+<link href="css/jeui.css" rel="stylesheet" type="text/css">
+<link href="css/prism.css" rel="stylesheet" type="text/css">
+<link href="css/jedate.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/prism.js"></script>
+<script type="text/javascript" src="js/jeDate.min.js"></script>
+</head>
+
+<body>
+<div class="topbarbox fmy">
+     <div class="topnavbox f18">
+          <ul class="juiw100">
+          <li><a href="index.html">首页</a></li>
+          <li class="fr"><a href="http://fly.jayui.com/">社区</a></li>
+          </ul>
+     </div>
+</div>
+
+<div class="warpbox fmy">
+<div class="workcon pb30">
+
+<!----------------start------------->
+    <h2 class="f20">选择理由</h2>
+    <blockquote>
+    jeDate除了包含日期范围限制、开始日期设定、自定义日期格式、时间戳转换、当天的前后若干天返回、时分秒选择、智能响应、自动纠错、节日识别，操作等常规功能外，还拥有更多趋近完美的解决方案。  QQ群：516754269 <br/><br/>
+    github下载：<a href="https://github.com/singod/jeDate" class="blue">github.com/singod/jeDate</a> <br/>
+    </blockquote>
+    <h3 class="f18">注意事项</h3>
+    <blockquote>
+    1、解压后，将jedate整个文件放至您项目的任意目录。<br/>
+    2、使用只需在页面引入jedate.js即可。
+    </blockquote>
+    <h3 class="f18">使用方法</h3>
+<pre class="code mt15">
+<code class="language-javascript">
+&ltscript type="text/javascript">  
+jeDate({
+    dateCell:"#test",
+    format:"YYYY-MM-DD",
+    isTime:false, 
+    minDate:"2014-09-19 00:00:00"
+})
+&lt/script>
+</code>
+</pre>
+    <h3 class="f18">核心方法：jeDate(options)</h3>
+    <blockquote>options是一个对象，它包含了以下key: '默认值'</blockquote>
+<pre class="code mt15">
+<code class="language-javascript">
+dateCell:"#id", //需显示日期的元素选择器
+format:"YYYY-MM-DD hh:mm:ss",   //日期格式
+minDate:"1900-01-01 00:00:00",   //最小日期
+maxDate:"2099-12-31 23:59:59",  //最大日期
+isinitVal:false,   //是否初始化时间
+isTime:false,     //是否开启时间选择
+isClear: true,    //是否显示清空
+festival:false,   //是否显示节日
+zIndex:999,   //弹出层的层级高度
+choose:function(val) {}  //选择时间之后的回调函
+</code>
+</pre>
+    <h3 class="f18">使用对象</h3>
+    <blockquote>可以使用在文本框与非文本框上：如 input 、 DIV</blockquote>
+<pre class="code">
+<code class="language-javascript">
+&ltinput id="indate" type="text" placeholder="请选择"  readonly>
+&ltdiv id="dateinfo">&ltdiv>
+</code>
+</pre>
+    <h3 class="f18">功能演示</h3>
+    <div class="mt10 mb15 ovh">
+    <input class="workinput wicon mr25" id="test1" type="text" placeholder="请选择"  readonly>
+    <input class="workinput" id="test2" type="text" placeholder="请选择" readonly><span class="wspan wicon" onClick="jeDate({dateCell:'#test2',isTime:true,format:'YYYY-MM-DD hh:mm:ss'})"></span>
+    </div>
+<pre class="code ovh">
+<code class="language-javascript">
+【外部js调用】
+&ltinput class="workinput wicon" id="test1" type="text" placeholder="请选择" readonly>
+&ltscript>
+jeDate({
+	dateCell:"#test1",  //目标元素。由于jedate.js封装了一个轻量级的选择器，因此dateCell还允许你传入class、tag这种方式 '#id .class'
+	format:"YYYY年MM月DD日 hh:mm:ss",
+	isinitVal:true, //显示时间
+	isTime:true, 
+    festival: true, //显示节日
+	minDate:"2014-09-19 00:00:00"
+})
+&lt/script>
+
+【图标触发日期】
+&ltinput class="workinput" id="test2" type="text" placeholder="请选择"  readonly>
+&ltspan class="wicon" onClick="jeDate({dateCell:'#test2',isTime:true,format:'YYYY-MM-DD hh:mm:ss'})">&lt/span>
+</code>
+</pre>
+    <h3 class="f18">自定义日期</h3>
+    <div class="mt10 mb15 ovh">
+    <span class="wstxt">自定义日期格式：</span><div class="workinput wicon mr25" id="custom1"></div>
+    <span class="wstxt">日期范围限定在昨天到明天：</span><input class="workinput wicon mr25" id="custom2" type="text" placeholder="请选择" readonly>
+    </div>
+<pre class="code ovh">
+<code class="language-javascript"> 
+【自定义日期格式】
+&ltdiv class="workinput wicon" id="custom1">&lt/div>
+&ltscript>
+jeDate({
+    dateCell: '#custom1',
+    format: 'YYYY/MM' // 分隔符可以任意定义，该例子表示只显示年月
+});
+&lt/script>
+
+【日期范围限定在昨天到明天】
+&ltinput class="workinput wicon" id="custom2" type="text" placeholder="请选择" readonly>
+&ltscript>
+jeDate({
+    dateCell: '#custom2',
+    format:"YYYY-MM-DD",
+    minDate: jeDate.now(-1), //0代表今天，-1代表昨天，-2代表前天，以此类推
+    maxDate: jeDate.now(1) //1代表明天，2代表后天，以此类推
+});
+&lt/script>
+</code>
+</pre>
+<!----------------end------------->
+
+</div>
+</div>
+<div class="footwork">
+     <div class="woauto f16">
+     <p>Powered by jayui.com ?2014-2015 </p>
+     <p>网站内容版权均归 jayui网版权所有</p>
+     </div>
+</div>
+
+<script type="text/javascript">
+jeDate({
+	dateCell:"#test1",  
+	format:"YYYY年MM月DD日 hh:mm:ss",
+	isinitVal:true,
+	isTime:true, 
+	festival: true, //显示节日
+	minDate:"2014-09-19 00:00:00"
+})
+
+jeDate({
+    dateCell: '#custom1',
+    format: 'YYYY/MM' // 分隔符可以任意定义，该例子表示只显示年月 
+});
+
+jeDate({
+    dateCell: '#custom2',
+	format:"YYYY-MM-DD",
+    minDate: jeDate.now(-1), //0代表今天，-1代表昨天，-2代表前天，以此类推
+    maxDate: jeDate.now(1) //1代表明天，2代表后天，以此类推
+});
+</script>
+</body>
+</html>
